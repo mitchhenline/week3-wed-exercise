@@ -5,6 +5,8 @@ function addMovie(event) {
     let movieTitle = document.createElement("span")
   
     movieTitle.textContent = inputField
+    movieTitle.addEventListener('click', crossOffMovie)
+
     movie.appendChild(movieTitle)
     document.querySelector('ul').appendChild(movie)
   
@@ -12,8 +14,6 @@ function addMovie(event) {
     deleteBtn.textContent = "X"
     movie.appendChild(deleteBtn)
     deleteBtn.addEventListener("click", deleteMovie)
-
-    span.textContent.addEventListener('click', crossOffMovie)
   
     document.querySelector("input").value = ""
 
@@ -28,7 +28,7 @@ function deleteMovie(event) {
 document.querySelector('form').addEventListener("submit", addMovie)
 
 function crossOffMovie(event) {
-    event.target.classList.toggle('.checked')
+    event.target.classList.toggle('checked')
 }
 
 
